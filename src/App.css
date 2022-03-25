@@ -40,3 +40,8 @@ ul {
 .linedtext {
   text-decoration: line-through;
 }
+div.d-flex.justify-content-center button {
+  padding: 1px 1px 0px 0px;
+  margin: 2px 2px 0px 0px;
+  font-size: small;
+}

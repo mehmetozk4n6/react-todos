@@ -36,9 +36,11 @@ function App() {
     <div className="App">
       <div>
         <Header />
-        <AddList tasks={tasks} setTasks={setTasks} />
-        <ShowList tasks={tasks} setTasks={setTasks} />
-        <Footer tasks={tasks} setTasks={setTasks} />
+        <div className="card">
+          <AddList tasks={tasks} setTasks={setTasks} />
+          <ShowList tasks={tasks} setTasks={setTasks} />
+          <Footer tasks={tasks} setTasks={setTasks} />
+        </div>
       </div>
     </div>
   );
