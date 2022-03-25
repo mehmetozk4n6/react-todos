@@ -1,10 +1,10 @@
 import React from "react";
 
-function ShowList({ tasks, setTasks }) {
+function ShowList({ tasks, setTasks, filtered, shower }) {
   return (
     <div>
       <ul>
-        {tasks.map((task, index) => (
+        {filtered(shower).map((task, index) => (
           <li key={index}>
             <div className="showList">
               <input
@@ -24,23 +24,23 @@ function ShowList({ tasks, setTasks }) {
                 type="text"
                 value={task.text}
                 className={task.done ? "linedtext" : ""}
-                onChange={(e) =>
+                onChange={(e) => {
                   setTasks(
                     tasks.map((el) =>
                       el.text === task.text
                         ? { ...el, text: e.target.value }
                         : el
                     )
-                  )
-                }
+                  );
+                }}
               />
               <button
-                className="destroy"
+                className="btn btn-outline-light p-2"
                 onClick={(e) =>
                   setTasks(tasks.filter((el) => el.text !== task.text))
                 }
               >
-                X
+                x
               </button>
             </div>
           </li>

@@ -32,14 +32,34 @@ function App() {
       done: false,
     },
   ]);
+
+  const [shower, setShower] = useState("All");
+  const filtered = (shower) =>
+    shower === "All"
+      ? tasks
+      : shower === "Active"
+      ? tasks.filter((task) => task.done === false)
+      : tasks.filter((task) => task.done !== false);
+
   return (
     <div className="App">
       <div>
         <Header />
         <div className="card">
           <AddList tasks={tasks} setTasks={setTasks} />
-          <ShowList tasks={tasks} setTasks={setTasks} />
-          <Footer tasks={tasks} setTasks={setTasks} />
+          <ShowList
+            tasks={tasks}
+            setTasks={setTasks}
+            filtered={filtered}
+            shower={shower}
+            setShower={setShower}
+          />
+          <Footer
+            tasks={tasks}
+            setTasks={setTasks}
+            filtered={filtered}
+            setShower={setShower}
+          />
         </div>
       </div>
     </div>
