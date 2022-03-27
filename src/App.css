@@ -41,7 +41,12 @@ ul {
   text-decoration: line-through;
 }
 div.d-flex.justify-content-center button {
+  padding: 3px;
+  margin: 2px 2px 2px 2px;
+  font-size: small;
+}
+div.d-flex.justify-content-center p {
   padding: 1px 1px 0px 0px;
-  margin: 2px 2px 0px 0px;
+  margin: 0px 5px;
   font-size: small;
 }
