@@ -43,7 +43,7 @@ function ShowList({ tasks, setTasks, filtered, shower, typeConvertor }) {
                 className="btn btn-outline-light p-2"
                 onClick={(e) => {
                   localStorage.removeItem(task.text);
-                  // setTasks(tasks.filter((el) => el.text !== task.text));
+                  setTasks(tasks.filter((el) => el.text !== task.text));
                 }}
               >
                 x
